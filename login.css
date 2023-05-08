@@ -1,0 +1,215 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding: 0px;
+}
+body{
+    background: #23242a;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.box{
+    width:380px;
+    height:500px;
+    background-color: #1c1c1c;
+    position: relative;
+    margin:250px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    /* z-index: 1; */
+    top:-50%;
+    left:-50%;
+    height:500px;
+    width:380px;
+    background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+    position: absolute;
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+}
+.box::after{
+    content: '';
+    /* z-index: 1; */
+    top:-50%;
+    left:-50%;
+    height:500px;
+    width:380px;
+    background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+    position: absolute;
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.form{
+    position:absolute;
+    inset: 2px;
+    z-index: 10;
+    background: #28292d;
+    border-radius: 8px;
+    padding:50px 50px;
+    display:flex;
+    flex-direction: column;
+
+}
+h2{
+    color:#45f3ff;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+.inputbox{
+    margin-top: 40px;
+    width:300px;
+    position: relative;
+}
+.inputbox input{
+    position: relative;
+    width:100%;
+    background: transparent;
+    padding: 20px 10px 10px;
+    border: none;
+    outline:none;
+    box-shadow: none;
+    color:white;
+    font-size: 1em;
+    letter-spacing:0.05em;
+    z-index: 10;
+    transition: 0.5s;
+}
+.inputbox span{
+    position:absolute;
+    padding:20px 0px 10px;
+    left:0;
+    font-size: 1em;
+    pointer-events: none;
+    color:#8f8f8f;
+    letter-spacing: 0.05em;
+    transition:0.5s;
+} 
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+{
+    color: #45f3ff;
+    transform: translateY(-34px);
+    font-size: 0.75em;
+}
+.inputbox i{
+    background:rgba(69, 243, 255,0.3);
+    width:100%;
+    height:2px;
+    left:0;
+    bottom:0;
+    position:absolute;
+    border-radius: 4px;
+    transition:0.5s;
+    z-index: 10;
+    pointer-events: none;
+    overflow:hidden;
+}
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i{
+    height: 40px;
+}
+.link{
+    display: flex;
+    justify-content: space-between;
+}
+.link a{
+    margin:10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+.link a:hover{
+    color: #45f3ff;
+}
+input[type="submit"]{
+    border:none;
+    outline:none;
+    width: 100px;
+    padding:10px 25px;
+    background: #45f3ff;
+    margin-top:20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.signin
+{
+    margin-top:10px;
+    padding:25px 50px;
+}
+.signin a{
+    color:greenyellow;
+    text-decoration: none;
+}
+.signin span{
+    color:white;
+}
+.signin a:hover{
+    color:#45f3ff;
+}
+.container{
+    width:380px;
+    height:350px;
+    background-color:#1c1c1c;
+    position: relative;
+    margin:250px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.container::before{
+    content: '';
+    /* z-index: 1; */
+    top:-50%;
+    left:-50%;
+    height:350px;
+    width:380px;
+    background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+    position: absolute;
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+}
+.container::after{
+    content: '';
+    /* z-index: 1; */
+    top:-50%;
+    left:-50%;
+    height:350px;
+    width:380px;
+    background:linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+    position: absolute;
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+    animation-delay: -3s;
+}
+.forgot{
+    position:absolute;
+    inset: 2px;
+    z-index: 10;
+    background: #28292d;
+    border-radius: 8px;
+    padding:50px 50px;
+    display:flex;
+    flex-direction: column;
+}
+.stop{
+    transition:0.1s;
+    transform:none;
+}
+.move{
+    transform: translateX(100%);
+}
